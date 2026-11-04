@@ -1,24 +1,26 @@
-# TalentOS Premium
+# TalentOS Premium 2.2
 
-Plataforma independiente de talento, competencias y desarrollo profesional, bajo la cuenta `riicardoomoya-Orion`.
+Plataforma independiente de evaluación documental de competencias, expedientes profesionales, desarrollo 30/60/90, evidencias y gobierno de calidad. Propietario: `riicardoomoya-Orion`.
 
-## Versión Premium 2.1 — Estado
+## Estado de la publicación
 
-- **Supabase personal Orion:** proyecto `kgffaxiiyynshclenlxe` operativo.
-- **Catálogo:** 58 perfiles / 88 competencias.
-- **Módulos:** profesionales, evaluación documental, historial, roadmap, seguimiento 30/60/90, matriz de competencias, evolución longitudinal y usuarios.
-- **Gobierno:** RLS, autorización, auditoría de cambios, revisión administrativa y transiciones controladas.
-- **Funciones Edge:** `evaluate-assessment`, `manage-users`, `manage-professionals`, `manage-development`, `talentos-web`.
-- **Pruebas locales:** 11/11 unitarias aprobadas y flujo de interfaz en navegador con servicios aislados.
+- **Backend Orion:** Supabase `kgffaxiiyynshclenlxe`, estado activo.
+- **Web provisional:** https://kgffaxiiyynshclenlxe.supabase.co/functions/v1/talentos-web — publicación 2.2 desplegada (función `talentos-web` versión 4).
+- **Catálogo independiente:** 58 perfiles y 88 competencias.
+- **Persistencia:** 12 tablas con RLS, 6 migraciones aplicadas.
+- **Servicios Edge:** `evaluate-assessment`, `manage-users`, `manage-professionals`, `manage-development`, `manage-quality` (JWT obligatorio), `talentos-web` (contenido estático).
+- **Seguridad:** permisos SQL de cliente restringidos a lectura sujeta a RLS, RPC protegidas, Supabase Advisor sin alertas.
+- **Calidad:** 19 pruebas automatizadas y smoke test Chromium completados con servicios aislados.
 
-**Web provisional:** https://kgffaxiiyynshclenlxe.supabase.co/functions/v1/talentos-web
+### Capacidades incorporadas en Premium 2.2
 
-> La publicación técnica está desplegada, pero el acceso HTTP externo y el uso con cuentas reales aún no están certificados. Todavía no existen usuarios autorizados en la instancia nueva.
+Portafolio de evidencias, dictámenes de calidad con separación de funciones, observatorio de métricas, auditoría, control de versiones, seguimiento 30/60/90 y evolución longitudinal.
 
-## Protección de código
+### Pendientes para uso con personas reales
 
-El repositorio permanece **público** y contiene sólo documentación. El código fuente Premium está preparado en un paquete independiente para su importación **después de cambiar la visibilidad a privado**.
+1. Crear una identidad verificada y autorizar el primer administrador en Supabase Auth.
+2. Probar con dos usuarios reales los controles de autorización y la segregación de funciones.
+3. Comprobar acceso HTTP desde navegador externo y conectar Netlify personal.
+4. **Convertir este repositorio a privado antes de subir el código fuente.** Por seguridad, este repositorio público contiene solamente documentación.
 
-## Activación pendiente
-
-Crear primer administrador mediante Supabase Auth, validar los permisos en pruebas E2E y vincular el repositorio privado a Netlify personal. No se importaron CVs ni expedientes de otro entorno.
+No se han trasladado CVs, usuarios ni expedientes de entornos anteriores. La evaluación documental no sustituye una certificación profesional.
