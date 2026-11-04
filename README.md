@@ -1,27 +1,31 @@
-# TalentOS Premium 2.3
+# TalentOS Premium 2.4 — Assessment Studio
 
-Plataforma independiente de inteligencia de capacidades profesionales en **Orion**. Este repositorio corresponde al proyecto personal, sin dependencia operativa de otros entornos.
+Plataforma personal de inteligencia de capacidades multiprofesionales, en **Orion**.
 
-## Estado de versión
+## Despliegue técnico
 
-- **Catálogo multiprofesional:** 70 perfiles y 120 competencias — Tecnología (58), Comercial (6) y Finanzas (6).
-- **Supabase Orion:** `kgffaxiiyynshclenlxe`, 13 tablas con RLS y 7 funciones Edge activas.
-- **Catálogo vigente:** `2.3.0`. Se conserva `2.0.0` para evaluaciones anteriores.
-- **Editor premium:** borradores de rúbricas, edición por nivel y peso, creación de variantes, versionado y publicación administrada.
-- **Evaluación:** prediagnóstico documental por perfil/nivel, con revisión humana obligatoria.
-- **Pruebas:** 25 de 25 automatizadas y smoke Chromium exitoso con servicios simulados.
-- **Auditoría de seguridad Supabase:** cero alertas.
+- **Proyecto Supabase:** `kgffaxiiyynshclenlxe` (independiente).
+- **Portal provisional:** https://kgffaxiiyynshclenlxe.supabase.co/functions/v1/talentos-web
+- **Versión web:** `talentos-web` v6.
+- **Nuevo servicio:** `manage-assessment-studio` v1, JWT obligatorio.
+- **Persistencia:** 16 tablas con RLS, 8 migraciones aplicadas.
+- **Instrumentos prácticos iniciales:** Arquitectura Empresarial, Dirección Comercial y Planeación Financiera (12 ejercicios).
+- **Catálogo profesional:** 70 perfiles / 120 competencias, versión 2.3.0, mantenido con historial.
+- **Pruebas locales:** 38/38 unitarias; navegadores Chromium con mocks aislados para flujo nuevo y módulos anteriores.
+- **Supabase Security Advisor:** sin alertas de seguridad.
 
-**Portal web provisional:** https://kgffaxiiyynshclenlxe.supabase.co/functions/v1/talentos-web
+## Flujo Premium 2.4
 
-## Condiciones operativas pendientes
+Instrumento versionado → asignación de profesional y evaluadores → respuestas y enlaces de evidencia → calificaciones independientes → detección de discrepancias → dictamen del administrador → auditoría.
 
-- El repositorio **aún es público**. Por eso se mantiene **sin código fuente completo** hasta que sea cambiado a privado. La versión fuente se entregó en paquete ZIP fuera de GitHub.
-- No se han registrado usuarios reales (0 en Auth). Falta activar el primer administrador y validar segregación con un segundo evaluador.
-- La apertura HTTP desde una red externa no pudo verificarse en el entorno de ejecución.
-- El despliegue definitivo Netlify personal está pendiente.
-- Los catálogos Comercial y Finanzas son taxonomías iniciales, pendientes de calibración por especialistas; los puntajes documentales no son certificaciones ni decisiones laborales automatizadas.
+Las rúbricas se publican mediante versiones nuevas. Las evaluaciones conservan una copia inmutable del instrumento utilizado. Se requiere segregación de funciones; la evaluación documental y la práctica se presentan por separado.
 
-## Modelo de compatibilidad
+## Pendientes de producción operativa
 
-El catálogo tecnológico anterior conserva sus identificadores. En 2.3.0 se corrigió una competencia duplicada del perfil `technology-program-manager` (`leadership` en núcleo y apoyo), lo cual puede modificar su cobertura documental: los reportes deben identificar siempre la versión del catálogo utilizada.
+- Registrar y aprobar las primeras identidades Supabase. Actualmente no hay usuarios reales.
+- Certificar el flujo end-to-end con JWT y tres actores distintos (cuatro con segunda revisión).
+- Verificar apertura HTTP desde navegador externo; la consulta por herramientas de investigación no pudo acceder al endpoint.
+- **Cambiar este repositorio a privado.** Sólo se publicará el código fuente cuando su visibilidad esté protegida.
+- Conectar Netlify personal como hosting definitivo.
+
+Las rúbricas son instrumentos iniciales de evaluación profesional sujetos a calibración de expertos; sus resultados no deben automatizar decisiones de empleo.
