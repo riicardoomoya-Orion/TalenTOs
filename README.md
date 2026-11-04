@@ -1,31 +1,24 @@
-# TalentOS Premium 2.4 — Assessment Studio
+# TalentOS Premium 2.4 · Assessment Studio
 
-Plataforma personal de inteligencia de capacidades multiprofesionales, en **Orion**.
+Plataforma independiente de inteligencia de competencias y desarrollo profesional de la cuenta `riicardoomoya-Orion`.
 
-## Despliegue técnico
+## Estado técnico
 
-- **Proyecto Supabase:** `kgffaxiiyynshclenlxe` (independiente).
-- **Portal provisional:** https://kgffaxiiyynshclenlxe.supabase.co/functions/v1/talentos-web
-- **Versión web:** `talentos-web` v6.
-- **Nuevo servicio:** `manage-assessment-studio` v1, JWT obligatorio.
-- **Persistencia:** 16 tablas con RLS, 8 migraciones aplicadas.
-- **Instrumentos prácticos iniciales:** Arquitectura Empresarial, Dirección Comercial y Planeación Financiera (12 ejercicios).
-- **Catálogo profesional:** 70 perfiles / 120 competencias, versión 2.3.0, mantenido con historial.
-- **Pruebas locales:** 38/38 unitarias; navegadores Chromium con mocks aislados para flujo nuevo y módulos anteriores.
-- **Supabase Security Advisor:** sin alertas de seguridad.
+- **Catálogo:** 70 perfiles y 120 competencias en Tecnología, Comercial y Finanzas.
+- **Assessment Studio 2.4:** tres instrumentos publicados con doce ejercicios prácticos, rúbricas de cinco niveles y vinculación a competencias.
+- **Flujo:** asignación por profesional, captura, revisión independiente, calibración opcional, dictamen y auditoría.
+- **Versión reproducible:** rúbrica inmutable por expediente y publicación de nuevas versiones por autorización administrativa.
+- **Supabase Orion:** proyecto `kgffaxiiyynshclenlxe`, 16 tablas con RLS y 8 Edge Functions activas (incluidas `manage-assessment-studio` con JWT y `talentos-web`).
+- **Web provisional:** https://kgffaxiiyynshclenlxe.supabase.co/functions/v1/talentos-web
+- **Calidad del paquete:** 40 pruebas unitarias aprobadas y smoke de Chromium para Assessment Studio y regresión funcional.
 
-## Flujo Premium 2.4
+## Actividades pendientes para operación productiva
 
-Instrumento versionado → asignación de profesional y evaluadores → respuestas y enlaces de evidencia → calificaciones independientes → detección de discrepancias → dictamen del administrador → auditoría.
+1. Crear los usuarios reales de Supabase y completar el flujo con al menos autor, revisor y validador distintos.
+2. Verificar que el portal abra mediante HTTP externo desde navegadores y dispositivos reales.
+3. Configurar Netlify personal y CI/CD desde el repositorio.
+4. Revisar las rúbricas con especialistas y validar su fiabilidad y equidad.
 
-Las rúbricas se publican mediante versiones nuevas. Las evaluaciones conservan una copia inmutable del instrumento utilizado. Se requiere segregación de funciones; la evaluación documental y la práctica se presentan por separado.
+**Este repositorio debe hacerse privado antes de importar el código fuente.** Mientras su visibilidad sea pública, permanece limitado a la documentación. No contiene datos personales, credenciales ni respaldos del entorno anterior.
 
-## Pendientes de producción operativa
-
-- Registrar y aprobar las primeras identidades Supabase. Actualmente no hay usuarios reales.
-- Certificar el flujo end-to-end con JWT y tres actores distintos (cuatro con segunda revisión).
-- Verificar apertura HTTP desde navegador externo; la consulta por herramientas de investigación no pudo acceder al endpoint.
-- **Cambiar este repositorio a privado.** Sólo se publicará el código fuente cuando su visibilidad esté protegida.
-- Conectar Netlify personal como hosting definitivo.
-
-Las rúbricas son instrumentos iniciales de evaluación profesional sujetos a calibración de expertos; sus resultados no deben automatizar decisiones de empleo.
+Los resultados de evaluación requieren criterio humano y no constituyen certificación ni decisiones automáticas de empleo.
