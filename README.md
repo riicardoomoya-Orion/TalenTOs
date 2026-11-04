@@ -1,20 +1,24 @@
-# TalentOS
+# TalentOS Premium
 
-Plataforma independiente de evaluación de competencias y desarrollo profesional. Propiedad y recursos bajo la cuenta personal **riicardoomoya-Orion**.
+Plataforma independiente de talento, competencias y desarrollo profesional, bajo la cuenta `riicardoomoya-Orion`.
 
-## Estado de la infraestructura
+## Versión Premium 2.1 — Estado
 
-- **GitHub:** repositorio creado. Antes de cargar el código completo debe configurarse como **privado**.
-- **Supabase Orion:** proyecto `kgffaxiiyynshclenlxe` operativo, migraciones y catálogo 2.0.0 aplicados.
-- **Catálogo:** 58 perfiles y 88 competencias.
-- **Servicios:** `evaluate-assessment`, `manage-users`, `manage-professionals` desplegados con JWT obligatorio.
-- **Web provisional:** https://kgffaxiiyynshclenlxe.supabase.co/functions/v1/talentos-web (publicación técnica; validación funcional con usuario real pendiente).
-- **Web definitiva prevista:** Netlify de la cuenta personal enlazado a este repositorio.
+- **Supabase personal Orion:** proyecto `kgffaxiiyynshclenlxe` operativo.
+- **Catálogo:** 58 perfiles / 88 competencias.
+- **Módulos:** profesionales, evaluación documental, historial, roadmap, seguimiento 30/60/90, matriz de competencias, evolución longitudinal y usuarios.
+- **Gobierno:** RLS, autorización, auditoría de cambios, revisión administrativa y transiciones controladas.
+- **Funciones Edge:** `evaluate-assessment`, `manage-users`, `manage-professionals`, `manage-development`, `talentos-web`.
+- **Pruebas locales:** 11/11 unitarias aprobadas y flujo de interfaz en navegador con servicios aislados.
 
-## Accesos y protección de datos
+**Web provisional:** https://kgffaxiiyynshclenlxe.supabase.co/functions/v1/talentos-web
 
-El frontend se ofrece como contenido público estático. Todas las evaluaciones y operaciones sobre profesionales requieren iniciar sesión y autorización por rol. Aún no hay usuario administrador creado. No se han migrado expedientes ni CVs del entorno anterior.
+> La publicación técnica está desplegada, pero el acceso HTTP externo y el uso con cuentas reales aún no están certificados. Todavía no existen usuarios autorizados en la instancia nueva.
 
-## Próximos controles
+## Protección de código
 
-Cambiar la visibilidad del repositorio a privado; aprovisionar el primer usuario mediante el panel de Auth del Supabase personal; darlo de alta como administrador con control explícito; conectar la publicación Netlify y completar pruebas E2E.
+El repositorio permanece **público** y contiene sólo documentación. El código fuente Premium está preparado en un paquete independiente para su importación **después de cambiar la visibilidad a privado**.
+
+## Activación pendiente
+
+Crear primer administrador mediante Supabase Auth, validar los permisos en pruebas E2E y vincular el repositorio privado a Netlify personal. No se importaron CVs ni expedientes de otro entorno.
